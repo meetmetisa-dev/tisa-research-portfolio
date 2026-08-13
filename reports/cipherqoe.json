@@ -1,0 +1,29 @@
+{
+  "dataset": {
+    "fields": [
+      "duration_s",
+      "down_bytes",
+      "up_bytes",
+      "packet_count",
+      "mean_packet_bytes",
+      "rtt_ms",
+      "burstiness"
+    ],
+    "flows": 240,
+    "payload_bytes_inspected": 0
+  },
+  "limitations": [
+    "Synthetic sessions do not reproduce every HTTPS/QUIC implementation or network path.",
+    "Real validation should hold out content, device, network and protocol versions.",
+    "Metadata can remain sensitive and requires minimization, retention limits and access controls."
+  ],
+  "metrics": {
+    "bitrate_class_accuracy": 0.9583,
+    "stall_duration_mae_s": 0.0697,
+    "startup_delay_mae_s": 0.1062
+  },
+  "privacy_boundary": "Only timestamps, directions, sizes, counts and aggregate flow statistics are modeled; payload inspection is excluded.",
+  "project": "cipherqoe",
+  "seed": 2026,
+  "status": "synthetic encrypted-flow metadata demonstration"
+}

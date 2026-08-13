@@ -1,0 +1,32 @@
+{
+  "controls": [
+    "time-ordered holdout",
+    "calibrated threshold",
+    "explicit abstention boundary",
+    "drift monitoring"
+  ],
+  "dataset": {
+    "calibration_flows": 350,
+    "flows": 500,
+    "source_groups": 17,
+    "test_flows": 150
+  },
+  "limitations": [
+    "Synthetic alerts are not evidence of performance on a production network.",
+    "Real adapters must remove identifiers and prevent source-host leakage.",
+    "Analyst review, threat modeling and cross-dataset validation remain necessary."
+  ],
+  "metrics": {
+    "alerts": 42,
+    "drift_flag": true,
+    "false_positive_rate": 0.0769,
+    "mean_benign_score_drift": 0.0263,
+    "precision": 0.7857,
+    "recall": 1.0,
+    "threshold": 0.4001
+  },
+  "project": "trustflow-lab",
+  "protocol": "time-ordered calibration/test split; no random-row leakage",
+  "seed": 2026,
+  "status": "synthetic SOC evidence demonstration"
+}

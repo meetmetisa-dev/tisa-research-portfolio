@@ -1,0 +1,34 @@
+{
+  "dataset": {
+    "sessions": 300,
+    "subject_overlap": 0,
+    "test_sessions": 60,
+    "test_subjects": 6,
+    "train_sessions": 240,
+    "train_subjects": 24
+  },
+  "limitations": [
+    "Synthetic data validates the evaluation pipeline, not real-world accuracy.",
+    "Public release of facial or participant data requires consent and ethics review.",
+    "External validation across devices, networks, and content remains required."
+  ],
+  "metrics": {
+    "baseline_rmse": 0.9161,
+    "model_mae": 0.2249,
+    "model_rmse": 0.2756,
+    "within_half_mos": 0.95,
+    "worst_subject_mae": 0.2656
+  },
+  "project": "qoe-foresight-repro",
+  "protocol": "participant-grouped holdout; preprocessing fitted on training rows only",
+  "seed": 2026,
+  "status": "synthetic reproducibility demonstration",
+  "weights": {
+    "ad_exposure": -0.1871,
+    "emotion_valence": 0.4103,
+    "intercept": 2.705,
+    "rebuffer_s": -0.4402,
+    "rtt_ms": -0.4852,
+    "throughput_mbps": 0.8263
+  }
+}

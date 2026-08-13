@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use these research prototypes, please cite this repository."
+title: "Trustworthy AI for Networked Multimedia: Reproducible Prototypes"
+type: software
+authors:
+  - family-names: Selma
+    given-names: Tisa
+version: 1.0.0
+date-released: 2026-08-10
+license: MIT
+repository-code: "https://github.com/tselma/tisa-research-portfolio"
+keywords:
+  - quality of experience
+  - adaptive streaming
+  - distributed machine learning
+  - encrypted traffic
+  - trustworthy AI

@@ -1,0 +1,33 @@
+{
+  "learned_parameters": {
+    "bias": 1.2371,
+    "weights": [
+      1.0648,
+      0.3526,
+      0.2786
+    ]
+  },
+  "limitations": [
+    "Federated learning does not provide privacy by itself; gradient leakage remains possible.",
+    "This CPU simulation models communication accounting but not real network latency or failures.",
+    "Real evaluation needs device-level energy, wall-clock time and fairness metrics."
+  ],
+  "metrics": {
+    "communication_bytes": 1416,
+    "communication_reduction": 0.5,
+    "final_client_mean_rmse": 0.6031,
+    "final_worst_client_rmse": 0.6849,
+    "initial_client_mean_rmse": 2.9107,
+    "initial_worst_client_rmse": 3.0667,
+    "uncompressed_reference_bytes": 2832
+  },
+  "project": "fedqoe-bench",
+  "scenario": {
+    "clients": 8,
+    "mean_clients_per_round": 7.38,
+    "quantization_bits": 16,
+    "rounds": 24
+  },
+  "seed": 2026,
+  "status": "synthetic non-IID federated systems demonstration"
+}
