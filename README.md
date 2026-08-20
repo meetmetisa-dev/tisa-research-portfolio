@@ -6,7 +6,7 @@
 
 Reproducible research prototypes spanning adaptive video, encrypted-network telemetry, multimodal engagement, distributed learning, trustworthy ML, and an explicitly simulation-only study of learned residual control for a deformable aerial platform.
 
-**[Open the interactive portfolio](https://meetmetisa-dev.github.io/tisa-research-portfolio/)**
+**[Open the interactive portfolio](https://meetmetisa-dev.github.io/tisa.github.io/)**
 
 ## Research premise
 

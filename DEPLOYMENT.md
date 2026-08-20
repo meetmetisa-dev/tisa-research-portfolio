@@ -2,7 +2,7 @@
 
 ## GitHub repository
 
-1. Create a public repository named `tisa-research-portfolio` under `github.com/tselma`.
+1. Create a public repository named `tisa-research-portfolio` under `github.com/meetmetisa-dev`.
 2. Upload this folder or push its initial commit to the `main` branch.
 3. In **Settings → Pages**, set the source to **GitHub Actions**.
 4. Open the `deploy-portfolio` workflow and confirm the published URL.
