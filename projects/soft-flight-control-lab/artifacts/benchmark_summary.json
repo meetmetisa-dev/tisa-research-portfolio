@@ -1,0 +1,122 @@
+{
+  "benchmark": "paired held-out randomized simulation",
+  "config": {
+    "dt": 0.02,
+    "duration_s": 12.0,
+    "episodes": 12,
+    "seed": 2401
+  },
+  "controllers": {
+    "nominal": {
+      "deformation_rms": {
+        "mean": 0.02907758,
+        "median": 0.02716292,
+        "std": 0.01115658
+      },
+      "episodes": 12,
+      "horizontal_rmse_m": {
+        "mean": 0.2967071,
+        "median": 0.2972647,
+        "std": 0.07777435
+      },
+      "max_abs_pitch_deg": {
+        "mean": 17.09019439,
+        "median": 15.74981208,
+        "std": 4.94296635
+      },
+      "max_position_error_m": {
+        "mean": 0.86430986,
+        "median": 0.81687938,
+        "std": 0.25426453
+      },
+      "mean_control_effort": {
+        "mean": 1.03251847,
+        "median": 1.01900043,
+        "std": 0.13040377
+      },
+      "position_rmse_m": {
+        "mean": 0.60486647,
+        "median": 0.56494209,
+        "std": 0.29304447
+      },
+      "successful_episodes": 11,
+      "tail_position_rmse_m": {
+        "mean": 0.61105124,
+        "median": 0.58063313,
+        "std": 0.31940657
+      },
+      "vertical_rmse_m": {
+        "mean": 0.48473098,
+        "median": 0.48766966,
+        "std": 0.35579093
+      }
+    },
+    "online_residual": {
+      "deformation_rms": {
+        "mean": 0.02925468,
+        "median": 0.02581774,
+        "std": 0.01170511
+      },
+      "episodes": 12,
+      "horizontal_rmse_m": {
+        "mean": 0.20456895,
+        "median": 0.2176444,
+        "std": 0.04796647
+      },
+      "max_abs_pitch_deg": {
+        "mean": 16.08617107,
+        "median": 15.54728389,
+        "std": 3.57023147
+      },
+      "max_position_error_m": {
+        "mean": 0.58480212,
+        "median": 0.59700851,
+        "std": 0.16317321
+      },
+      "mean_control_effort": {
+        "mean": 1.03013538,
+        "median": 1.02132454,
+        "std": 0.13000149
+      },
+      "position_rmse_m": {
+        "mean": 0.26420954,
+        "median": 0.23458749,
+        "std": 0.10760838
+      },
+      "successful_episodes": 12,
+      "tail_position_rmse_m": {
+        "mean": 0.20012396,
+        "median": 0.16815524,
+        "std": 0.12785578
+      },
+      "vertical_rmse_m": {
+        "mean": 0.14032764,
+        "median": 0.11113334,
+        "std": 0.13526511
+      }
+    }
+  },
+  "evidence_boundary": "simulation only; not hardware or flight validation",
+  "paired_comparison": {
+    "max_position_error_m": {
+      "improved_episodes": 12,
+      "mean_absolute_reduction": 0.27950774,
+      "mean_relative_reduction_percent": 30.40085617,
+      "total_episodes": 12
+    },
+    "position_rmse_m": {
+      "improved_episodes": 12,
+      "mean_absolute_reduction": 0.34065693,
+      "mean_relative_reduction_percent": 53.33905299,
+      "total_episodes": 12
+    },
+    "tail_position_rmse_m": {
+      "improved_episodes": 12,
+      "mean_absolute_reduction": 0.41092728,
+      "mean_relative_reduction_percent": 66.40228604,
+      "total_episodes": 12
+    }
+  },
+  "scenario_seed_rule": "seed + 7919 * episode_index",
+  "schema_version": "1.0"
+}

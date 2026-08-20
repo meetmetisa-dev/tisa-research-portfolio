@@ -1,0 +1,33 @@
+name: softflight-control-lab
+
+on:
+  push:
+    paths:
+      - "projects/soft-flight-control-lab/**"
+      - ".github/workflows/softflight-ci.yml"
+  pull_request:
+    paths:
+      - "projects/soft-flight-control-lab/**"
+      - ".github/workflows/softflight-ci.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    defaults:
+      run:
+        working-directory: projects/soft-flight-control-lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Run deterministic smoke benchmark
+        run: python scripts/run_benchmark.py --episodes 2 --duration 2 --output-dir /tmp/softflight-artifacts
