@@ -1,4 +1,4 @@
-.PHONY: test demos site clean
+.PHONY: test demos advanced site clean
 
 PYTHONPATH := src
 export PYTHONPATH
@@ -13,8 +13,13 @@ demos:
 	python3 -m tisa_portfolio.fedqoe --out reports/fedqoe-bench.json
 	python3 -m tisa_portfolio.trustflow --out reports/trustflow-lab.json
 
+advanced:
+	python3 projects/multiagent-reinforcement-learning/validate.py
+	python3 projects/federated-learning/validate.py
+	python3 projects/deep-reinforcement-learning/validate.py
+
 site:
-	python3 -m http.server 8000 --directory website
+	python3 -m http.server 8000
 
 clean:
 	find . -type d -name __pycache__ -prune -exec rm -r {} +

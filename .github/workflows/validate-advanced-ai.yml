@@ -1,0 +1,30 @@
+name: Validate advanced AI portfolios
+on:
+  push:
+    paths:
+      - "projects/**"
+      - "advanced-ai.html"
+      - "advanced-ai.css"
+      - "ai-methods.css"
+      - "app.js"
+  pull_request:
+    paths:
+      - "projects/**"
+      - "advanced-ai.html"
+      - "advanced-ai.css"
+      - "ai-methods.css"
+      - "app.js"
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install "numpy>=2.0,<3"
+      - run: python projects/multiagent-reinforcement-learning/validate.py
+      - run: python projects/federated-learning/validate.py
+      - run: python projects/deep-reinforcement-learning/validate.py

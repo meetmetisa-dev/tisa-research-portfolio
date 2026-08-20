@@ -1,0 +1,54 @@
+{
+  "project": "Double DQN for Drift-Aware QoE Recovery",
+  "topic": "Deep Reinforcement Learning",
+  "evidence_status": "Synthetic reproducible research prototype; not a production or safety-certified controller.",
+  "seed": 31,
+  "configuration": {
+    "state_dim": 5,
+    "actions": ["monitor", "recalibrate", "fast_adapt", "full_recovery"],
+    "hidden_units": 32,
+    "training_episodes": 420,
+    "algorithm": "Double DQN with replay and target network, implemented in NumPy"
+  },
+  "evaluations": {
+    "double_dqn": {
+      "mean_reward": 0.7271079808532029,
+      "mean_qoe": 0.7999303132670476,
+      "outage_rate": 0.0005128205128205128,
+      "mean_residual": 0.11191242365344219,
+      "mean_action_cost": 0.04893247863247863,
+      "action_distribution": {"monitor": 0.4782905982905983, "recalibrate": 0.3412820512820513, "fast_adapt": 0.0, "full_recovery": 0.18042735042735042}
+    },
+    "threshold": {
+      "mean_reward": 0.5820575311047304,
+      "mean_qoe": 0.677254076514143,
+      "outage_rate": 0.050854700854700854,
+      "mean_residual": 0.18532989999233018,
+      "mean_action_cost": 0.022507692307692305,
+      "action_distribution": {"monitor": 0.7082051282051282, "recalibrate": 0.17102564102564102, "fast_adapt": 0.07487179487179488, "full_recovery": 0.0458974358974359}
+    },
+    "monitor_only": {
+      "mean_reward": -0.13252046106671028,
+      "mean_qoe": 0.3904534159142446,
+      "outage_rate": 0.5908547008547008,
+      "mean_residual": 0.564611002857165,
+      "mean_action_cost": 0.0,
+      "action_distribution": {"monitor": 1.0, "recalibrate": 0.0, "fast_adapt": 0.0, "full_recovery": 0.0}
+    },
+    "random": {
+      "mean_reward": 0.6034338811564819,
+      "mean_qoe": 0.7964561801672583,
+      "outage_rate": 0.0003418803418803419,
+      "mean_residual": 0.12654692962399594,
+      "mean_action_cost": 0.08439444444444444,
+      "action_distribution": {"monitor": 0.2527350427350427, "recalibrate": 0.2477777777777778, "fast_adapt": 0.24247863247863247, "full_recovery": 0.25700854700854703}
+    }
+  },
+  "headline": {
+    "mean_qoe": 0.7999303132670476,
+    "outage_rate": 0.0005128205128205128,
+    "mean_residual": 0.11191242365344219,
+    "reward_gain_vs_monitor_percent": 648.6760119912198,
+    "mean_action_cost": 0.04893247863247863
+  }
+}

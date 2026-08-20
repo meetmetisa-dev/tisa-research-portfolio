@@ -1,0 +1,51 @@
+{
+  "project": "Cooperative Edge QoE Control",
+  "topic": "Multi-Agent Reinforcement Learning",
+  "evidence_status": "Synthetic reproducible research prototype; not peer-reviewed or production validated.",
+  "seed": 17,
+  "environment": {
+    "agents": 3,
+    "states": 27,
+    "joint_actions": 27,
+    "capacity": 2.15,
+    "training_episodes": 2600
+  },
+  "evaluations": {
+    "learned_joint_q": {
+      "reward": 0.8856466838631041,
+      "qoe": 0.932584767366085,
+      "overload_rate": 0.0004687500000000001,
+      "fairness": 0.9983088209620936,
+      "energy": 0.42231621093749994
+    },
+    "demand_aware_heuristic": {
+      "reward": 0.8498250794073302,
+      "qoe": 0.8917800483349516,
+      "overload_rate": 0.0,
+      "fairness": 0.9762819854947249,
+      "energy": 0.325348046875
+    },
+    "fixed_balanced": {
+      "reward": 0.8860504602381031,
+      "qoe": 0.9329420895788492,
+      "overload_rate": 0.0,
+      "fairness": 0.9983975794586695,
+      "energy": 0.4225
+    },
+    "random": {
+      "reward": 0.7215794219128288,
+      "qoe": 0.8647234810541111,
+      "overload_rate": 0.37093750000000003,
+      "fairness": 0.9645495621969907,
+      "energy": 0.51400703125
+    }
+  },
+  "headline": {
+    "learned_mean_reward": 0.8856466838631041,
+    "reward_gain_vs_random_percent": 22.737242355851944,
+    "reward_gap_vs_fixed_percent": -0.045570358926340856,
+    "learned_mean_qoe": 0.932584767366085,
+    "learned_overload_rate": 0.0004687500000000001,
+    "learned_fairness": 0.9983088209620936
+  }
+}

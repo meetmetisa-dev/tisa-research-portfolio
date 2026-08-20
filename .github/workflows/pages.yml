@@ -1,27 +1,61 @@
 name: Deploy portfolio to GitHub Pages
+
 on:
   push:
     branches: [main]
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
   group: pages
   cancel-in-progress: true
+
 jobs:
-  deploy:
+  validate-and-deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate website structure
+        shell: bash
+        run: |
+          test -f index.html
+          test -f styles.css
+          test -f app.js
+          test -f advanced-ai.html
+          test -f projects/soft-flight-control-lab/README.md
+          test -f projects/multiagent-reinforcement-learning/index.html
+          test -f projects/federated-learning/index.html
+          test -f projects/deep-reinforcement-learning/index.html
+
+      - name: Validate advanced AI prototypes
+        run: |
+          python -m pip install "numpy>=2.0,<3"
+          python projects/multiagent-reinforcement-learning/validate.py
+          python projects/federated-learning/validate.py
+          python projects/deep-reinforcement-learning/validate.py
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: .
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
